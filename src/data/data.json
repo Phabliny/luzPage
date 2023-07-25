@@ -1,7 +1,8 @@
 {
   "Header": {
     "image": "./../public/img/logo.png",
-    "paragraph": "Brilhe com a LUZ: Onde a criatividade é feita à mão e cada peça é uma obra-prima única."
+    "paragraph1": "",
+    "paragraph2": ""
   },
   "About": {
     "paragraph1": "Com mão habilidosa e olhar apurado, Luziano cria obras únicas que unem o antigo e o moderno. Usando técnicas tradicionais de bordado e trabalhos com couro, ele dá vida a peças cheias de personalidade e beleza.",
@@ -68,8 +69,8 @@
   "Services": [
     {
       "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Atendimento excepcional ao cliente",
+      "text": "Lorem ipsum dolor  bvbnbvsit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     },
     {
       "icon": "fa fa-cart-arrow-down",

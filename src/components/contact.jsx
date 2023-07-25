@@ -104,12 +104,30 @@ export const Contact = () => {
       });
   };
 
+  const handleReset = () => {
+    setSubmitted(false);
+    setState({
+      name: "",
+      email: "",
+      phone: "",
+      terms: false
+    });
+    setFormErrors({});
+    setSegments([]);
+  };
+
   const { name, email, phone, terms } = state;
 
   return (
-    <div>
+    <div id="contact">
       {submitted ? (
-        <div>Enviado</div>
+        <div className="submitted">
+          <div className="submitted-icon">✓</div>
+          <div className="submitted-message">Formulário enviado com sucesso!</div>
+          <Button onClick={handleReset} variant="contained" color="primary">
+            Enviar Novamente
+          </Button>
+        </div>
       ) : (
         <Stack
           direction={{ sm: 'column', md: 'row' }}
@@ -119,13 +137,13 @@ export const Contact = () => {
           alignItems="center"
         >
           <Container maxWidth="xs">
-            <h2>CONTATO</h2>
-            <h3>
+            <h2 style={{ color: 'black' }}>CONTATO</h2>
+            <h3 style={{ color: 'black' }}>
               Preencha o formulário ao lado que entraremos em contato o mais
               rápido possível.
             </h3>
           </Container>
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" style={{ backgroundColor: 'transparent' }}>
             <form onSubmit={handleSubmit}>
               <TextField
                 id="outlined-basic"
@@ -140,6 +158,7 @@ export const Contact = () => {
                 helperText={formErrors.name}
                 onChange={handleChange}
                 InputProps={{ startAdornment: <AssignmentInd /> }}
+                style={{ color: 'black' }}
               />
               <TextField
                 id="outlined-basic"
@@ -153,6 +172,7 @@ export const Contact = () => {
                 helperText={formErrors.email}
                 onChange={handleChange}
                 InputProps={{ startAdornment: <Email /> }}
+                style={{ color: 'black' }}
               />
               <TextField
                 id="outlined-basic"
@@ -171,9 +191,10 @@ export const Contact = () => {
                   inputComponent: MaskedInput,
                   inputProps: { mask: phoneMask }
                 }}
+                style={{ color: 'black' }}
               />
               <FormControl component="fieldset" fullWidth margin="normal">
-                <FormLabel id="demo-radio-buttons-group-label">
+                <FormLabel id="demo-radio-buttons-group-label" style={{ color: 'black' }}>
                   Categoria
                 </FormLabel>
                 <FormGroup onChange={handleCheck}>
@@ -181,21 +202,25 @@ export const Contact = () => {
                     value="bolsas"
                     control={<Checkbox />}
                     label="Bolsas"
+                    style={{ color: 'black' }}
                   />
                   <FormControlLabel
                     value="cintos"
                     control={<Checkbox />}
                     label="Cintos"
+                    style={{ color: 'black' }}
                   />
                   <FormControlLabel
                     value="carteiras"
                     control={<Checkbox />}
                     label="Carteiras"
+                    style={{ color: 'black' }}
                   />
                   <FormControlLabel
                     value="bijuterias"
                     control={<Checkbox />}
                     label="Bijuterias"
+                    style={{ color: 'black' }}
                   />
                 </FormGroup>
               </FormControl>
@@ -206,19 +231,41 @@ export const Contact = () => {
                       name="terms"
                       checked={terms}
                       onChange={handleChange}
+                      style={{ color: 'black' }}
                     />
                   }
                   label="Aceito os termos e condições"
                 />
                 <FormHelperText>{formErrors.terms}</FormHelperText>
               </FormControl>
-              <Button fullWidth type="submit" variant="contained">
+              <Button fullWidth type="submit" variant="contained" style={{ color: 'black' }}>
                 Enviar
               </Button>
             </form>
           </Container>
         </Stack>
       )}
+      <style jsx>{`
+        .submitted {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin-top: 20px;
+        }
+
+        .submitted-icon {
+          font-size: 48px;
+          color: green;
+        }
+
+        .submitted-message {
+          font-size: 24px;
+          margin-top: 10px;
+          text-align: center;
+          color: black;
+        }
+      `}</style>
     </div>
   );
 };
