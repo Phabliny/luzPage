@@ -2,6 +2,10 @@ import React from "react";
 import {
   FooterContainer,
   ContactInfoContainer,
+  Logo,
+  Titulo,
+  Subtitulo,
+  Info,
   ContactTitle,
   ContactList,
   ContactItem,
@@ -19,37 +23,47 @@ export const Footer = (props) => {
   return (
     <FooterContainer>
       <ContactInfoContainer>
-        <div>
-          <ContactTitle>Informações de contato</ContactTitle>
+        <Logo>
+          <Titulo>Luz</Titulo>
+          <Subtitulo><span style={{ fontSize: '22px' }}>C</span>riação e <span style={{ fontSize: '22px' }}>P</span>rodução</Subtitulo>
+        </Logo>
+        <Info>
+          <ContactTitle>Informações de Contato</ContactTitle>
           <ContactList>
             <ContactItem>
               <ContactIcon className="fa fa-map-marker"></ContactIcon>
-              <ContactText></ContactText>
+              <ContactText>Ruas dos bobos N°0</ContactText>
             </ContactItem>
             <ContactItem>
               <ContactIcon className="fa fa-phone"></ContactIcon>
-              <ContactText>{props.data ? props.data.phone : "loading"}</ContactText>
+              <ContactText>99999-9999</ContactText>
             </ContactItem>
             <ContactItem>
               <ContactIcon className="fa fa-envelope-o"></ContactIcon>
-              <ContactText>{props.data ? props.data.email : "loading"}</ContactText>
+              <ContactText>luz@gmail.com</ContactText>
             </ContactItem>
           </ContactList>
-        </div>
+        </Info>
         <SocialContainer>
+        <ContactTitle>Redes Sociais</ContactTitle>
           <SocialList>
             <SocialItem>
-              <SocialLink href={props.data ? props.data.facebook : "/"}>
+              <SocialItem>
+                <SocialLink href={"https://instagram.com"} target="_blank">
+                  <i className="fa fa-instagram"></i>
+                </SocialLink>
+              </SocialItem>
+              <SocialLink href={"https://fb.com"} target="_blank">
                 <i className="fa fa-facebook"></i>
               </SocialLink>
             </SocialItem>
             <SocialItem>
-              <SocialLink href={props.data ? props.data.twitter : "/"}>
+              <SocialLink href={"https://twitter.com"} target="_blank">
                 <i className="fa fa-twitter"></i>
               </SocialLink>
             </SocialItem>
             <SocialItem>
-              <SocialLink href={props.data ? props.data.youtube : "/"}>
+              <SocialLink href={"https://youtube.com"} target="_blank">
                 <i className="fa fa-youtube"></i>
               </SocialLink>
             </SocialItem>

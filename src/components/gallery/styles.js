@@ -1,3 +1,5 @@
+// styles.js
+
 import styled from "styled-components";
 
 export const GalleryWrapper = styled.div`
@@ -16,13 +18,27 @@ export const Description = styled.p`
 `;
 
 export const GalleryContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 40px;
 `;
 
 export const GalleryItem = styled.div`
-  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
   padding: 10px;
 `;
+
+export const CarouselGrande = styled.div`
+  display: none;
+`;
+
+export const CarouselMedio = styled.div`
+  display: none;
+`;
+
+export const CarouselPequeno = styled.div`
+  display: inline-block;
+`;
+
 

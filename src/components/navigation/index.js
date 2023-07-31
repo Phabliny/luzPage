@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { StyledNavigation, StyledNavbarCollapse } from "./styles";
 
 export const Navigation = (props) => {
   const [isSmallDevice, setIsSmallDevice] = useState(false);
@@ -18,7 +19,7 @@ export const Navigation = (props) => {
   }, []);
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+    <StyledNavigation id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
           <button
@@ -37,18 +38,29 @@ export const Navigation = (props) => {
           </a>
         </div>
 
-        <div
+        <StyledNavbarCollapse
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
+          isSmallDevice={isSmallDevice}
         >
           <ul className="nav navbar-nav navbar-right">
+            <li>
+              <a href="#description" className="page-scroll">
+                Descrição
+              </a>
+            </li>
+            <li>
+              <a href="#features" className="page-scroll">
+                Destaques
+              </a>
+            </li>
             <li>
               <a href="#about" className="page-scroll">
                 Sobre
               </a>
             </li>
             <li>
-              <a href="#gallery" className="page-scroll">
+              <a href="#products" className="page-scroll">
                 Produtos
               </a>
             </li>
@@ -63,8 +75,8 @@ export const Navigation = (props) => {
               </a>
             </li>
           </ul>
-        </div>
+        </StyledNavbarCollapse>
       </div>
-    </nav>
+    </StyledNavigation>
   );
 };

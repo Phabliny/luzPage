@@ -1,31 +1,37 @@
 import React from "react";
+import {
+  ServicesContainer,
+  ServicesTitle,
+  ServiceItem,
+  ServiceIcon,
+  ServiceDesc,
+} from "./styles";
 
-export const Services = (props) => {
+export const Events = (props) => {
   return (
-    <div id="services" className="text-center">
+    <ServicesContainer id="services">
       <div className="container">
-        <div className="section-title">
+        <ServicesTitle>
           <h2>Our Services</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
             dapibus leonec.
           </p>
-        </div>
+        </ServicesTitle>
         <div className="row">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
-                  {" "}
-                  <i className={d.icon}></i>
-                  <div className="service-desc">
+                <ServiceItem key={`${d.name}-${i}`} className="col-md-4">
+                  <ServiceIcon className={d.icon} />
+                  <ServiceDesc>
                     <h3>{d.name}</h3>
                     <p>{d.text}</p>
-                  </div>
-                </div>
+                  </ServiceDesc>
+                </ServiceItem>
               ))
             : "loading"}
         </div>
       </div>
-    </div>
+    </ServicesContainer>
   );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from '../../assets/img/logo.png';
 import {
   HeaderContainer,
   LeftContent,
   RightContent,
   Titulo,
+  Subtitulo,
   IntroText,
   Paragraph1,
   Paragraph2,
@@ -16,15 +16,12 @@ export const Header = (props) => {
   return (
     <HeaderContainer id="header">
       <LeftContent>
-        {props.data ? (
-          <LogoImage src={Logo} alt="Imagem" />
-        ) : (
-          <Titulo>Luz</Titulo>
-        )}
+        <Titulo>Luz</Titulo>
+        <Subtitulo><span style={{ fontSize: '40px' }}>C</span>riação e <span style={{ fontSize: '40px' }}>P</span>rodução</Subtitulo>
       </LeftContent>
       <RightContent>
         <IntroText>
-          <Paragraph1>Brilhe com a LUZ:</Paragraph1>
+          <Paragraph1>Brilhe com a Luz!</Paragraph1>
           <Paragraph2>Onde a criatividade é feita à mão e cada peça é uma obra-prima única.</Paragraph2>
           <CustomButton href="#contact">Entre em contato</CustomButton>
         </IntroText>

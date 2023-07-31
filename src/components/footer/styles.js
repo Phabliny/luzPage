@@ -1,25 +1,60 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: #FCECC9;
-  padding: 20px;
+  background-color: #fcecc9;
 `;
 
 export const ContactInfoContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px; /* Espaçamento interno */
+`;
+
+export const Logo = styled.div`
+  margin-right: 70px;
+`;
+
+export const Titulo = styled.h1`
+  font-size: 120px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "Autography", sans-serif;
+  color: black;
+`;
+
+export const Subtitulo = styled.h1`
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  line-height: 0.1;
+  font-family: "Autography", sans-serif;
+  font-family: "Trirong", sans-serif;
+  color: black;
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 70px;
 `;
 
 export const ContactTitle = styled.h3`
   font-size: 18px;
-  margin-bottom: 10px;
-  color: #C47538;
+  padding: 0;
+  color: #c47538;
 `;
 
 export const ContactList = styled.ul`
   list-style: none;
   padding: 0;
+`;
+
+export const ContactItemWrapper = styled.div`
+  margin: 5px 0; /* Adicione a margem para controlar o espaçamento entre os elementos */
 `;
 
 export const ContactItem = styled.li`
@@ -57,12 +92,12 @@ export const FooterSeparator = styled.div`
   width: 100%;
   height: 2px;
   background-color: #C47538;
-  margin: 20px 0;
+  margin: 0;
 `;
 
 export const FooterText = styled.p`
   font-size: 14px;
   color: #777;
   text-align: center;
-  margin-top: 20px;
+  padding: 5px;
 `;

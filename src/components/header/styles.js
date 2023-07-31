@@ -39,10 +39,20 @@ export const RightContent = styled.div`
 `;
 
 export const Titulo = styled.h1`
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-family: 'Inter', sans-serif;
+  font-size: 200px;
+  margin:0;
+  padding:0;
+  line-height: 1;
+  font-family: 'Autography', sans-serif;
+`;
+
+export const Subtitulo = styled.h1`
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 0.1;
+  font-family: 'Autography', sans-serif;
+  font-family: 'Trirong', sans-serif;
 `;
 
 export const IntroText = styled.div`
@@ -52,10 +62,12 @@ export const IntroText = styled.div`
 export const Paragraph1 = styled.p`
   width: 20vw;
   color: black;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.5;
-  font-family: 'Inter', sans-serif;
-  margin: 0 auto; /* Centralizar horizontalmente */
+  letter-spacing: 1.5px;
+  font-family: 'Swallow Script', sans-serif;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     width: 80vw;
@@ -66,10 +78,10 @@ export const Paragraph1 = styled.p`
 export const Paragraph2 = styled.p`
   width: 20vw;
   color: black;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.5;
-  font-family: 'Inter', sans-serif;
-  margin: 10px auto 40px; /* Adicionar margem inferior e espaçamento */
+  font-family: 'Heartfield', sans-serif;
+  margin: 10px auto 40px;
 
   @media (max-width: 768px) {
     width: 80vw;

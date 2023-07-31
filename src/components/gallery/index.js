@@ -1,58 +1,75 @@
-import React from "react";
+// Gallery.js
+
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Image } from "../image";
-import { GalleryWrapper, Title, Description } from "./styles";
+import { GalleryWrapper, Title, Description, GalleryContainer, GalleryItem } from "./styles"; // Import the styled components from "styles.js"
+import { listAllFiles } from "../../service/storageUtils";
+import estilo from './flip.module.css'; // Import the flip card styles
 
-const CustomNextArrow = ({ onClick }) => (
-  <button className="custom-arrow custom-next" onClick={onClick}>
-    Next
-  </button>
-);
+const Flip = ({ fileName }) => {
+  return (
+    <>
+      <div className={estilo.flipCard}>
+        <div className={estilo.flipCardInner}>
+          <div className={estilo.flipCardFront}>
+            <img src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/images%2F${encodeURIComponent(fileName)}?alt=media`} width="200" height="200" alt={fileName} />
+            <div className={estilo.frontside}>{fileName}</div>
+          </div>
+          <div className={estilo.flipCardBack}>
+            <img src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/images%2F${encodeURIComponent(fileName)}?alt=media`} width="200" height="200" />
+            <div className={estilo.backside}>Descrição do {fileName}</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-const CustomPrevArrow = ({ onClick }) => (
-  <button className="custom-arrow custom-prev" onClick={onClick}>
-    Prev
-  </button>
-);
+export const Gallery = () => {
+  const [fileList, setFileList] = useState([]);
 
-export const Gallery = (props) => {
+  useEffect(() => {
+    listFiles();
+  }, []);
+
+  const listFiles = async () => {
+    try {
+      const files = await listAllFiles();
+      setFileList(files);
+    } catch (error) {
+      console.error('Erro ao listar os arquivos:', error);
+    }
+  };
+
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
   };
 
   return (
-    <GalleryWrapper id="gallery">
+    <GalleryWrapper id="products">
       <div className="container">
         <div className="section-title">
           <Title>Galeria de Produtos</Title>
           <Description>Explore a elegância atemporal e a qualidade excepcional dos nossos artesanatos de couro.</Description>
         </div>
-        {props.data ? (
-          <Slider {...settings}>
-            {props.data.map((d, i) => (
-              <div key={`${d.title}-${i}`}>
-                <Image
-                  title={d.title}
-                  largeImage={d.largeImage}
-                  smallImage={d.smallImage}
-                />
-              </div>
+        <GalleryContainer>
+          {/* Use the flipCardContainer class here to wrap the flip cards */}
+          <div className={estilo.flipCardContainer}>
+            {/* Render the Flip component for each fileName */}
+            {fileList.map((fileName, index) => (
+              <GalleryItem key={index}>
+                <Flip fileName={fileName} />
+              </GalleryItem>
             ))}
-          </Slider>
-        ) : (
-          "Loading..."
-        )}
+          </div>
+        </GalleryContainer>
       </div>
     </GalleryWrapper>
   );

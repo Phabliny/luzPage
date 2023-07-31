@@ -1,0 +1,39 @@
+.carousel_grande {
+    display: none;
+}
+
+.carousel_medio {
+    display: none;
+}
+
+.carousel_pequeno {
+    display: inline-block;
+}
+
+@media screen and (min-width: 599px) {
+    .carousel_grande {
+        display: none;
+    }
+
+    .carousel_medio {
+        display: inline-block;
+    }
+
+    .carousel_pequeno {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .carousel_grande {
+        display: inline-block;
+    }
+
+    .carousel_medio {
+        display: none;
+    }
+
+    .carousel_pequeno {
+        display: none;
+    }
+}

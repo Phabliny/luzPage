@@ -1,35 +1,14 @@
-import React from "react";
-import Img from "../../assets/img/luziano.png";
-import {
-  AboutWrapper,
-  Container,
-  Row,
-  Column,
-  Image,
-  AboutText,
-  Title,
-  Paragraph,
-  Subtitle,
-  ListStyle,
-  ListItem,
-} from "./styles";
+import React from 'react';
+import { AboutContainer, AboutImage, AboutText } from './styles';
+import luziano from "../../assets/img/luziano.png"
 
-export const About = (props) => {
+export const About = () => {
   return (
-    <AboutWrapper id="about">
-      <Container>
-        <Row>
-          <Column>
-            <Image src={Img} alt="" />
-          </Column>
-          <Column>
-            <AboutText>
-              <Title>Sobre a empresa</Title>
-              <Paragraph>Com mão habilidosa e olhar apurado, Luziano cria obras únicas que unem o antigo e o moderno. Usando técnicas tradicionais de bordado e trabalhos com couro, ele dá vida a peças cheias de personalidade e beleza.</Paragraph>
-            </AboutText>
-          </Column>
-        </Row>
-      </Container>
-    </AboutWrapper>
+    <AboutContainer id="about">
+      <AboutImage width={"100%"} height={"100%"} src={luziano} alt="Imagem da empresa" />
+      <AboutText>
+      Com mão habilidosa e olhar apurado, Luziano cria obras únicas que unem o antigo e o moderno. Usando técnicas tradicionais de bordado e trabalhos com couro, ele dá vida a peças cheias de personalidade e beleza.
+      </AboutText>
+    </AboutContainer>
   );
 };
