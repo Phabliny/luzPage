@@ -5,12 +5,17 @@ import styled from "styled-components";
 export const GalleryWrapper = styled.div`
   text-align: center;
   padding: 40px;
-  background-color: #f9f9f9;
   min-height: 100vh;
 `;
 
+export const SectionTitle = styled.div`
+  margin-bottom: 20px;
+`;
+
 export const Title = styled.h2`
-  font-size: 30px;
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 `;
 
 export const Description = styled.p`
@@ -40,5 +45,3 @@ export const CarouselMedio = styled.div`
 export const CarouselPequeno = styled.div`
   display: inline-block;
 `;
-
-

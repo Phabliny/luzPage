@@ -4,7 +4,7 @@ export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 100px;
 `;
 

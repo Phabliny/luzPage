@@ -1,35 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ServicesContainer,
-  ServicesTitle,
+  Title,
+  SectionTitle,
   ServiceItem,
   ServiceIcon,
   ServiceDesc,
 } from "./styles";
+import { listAllFilesEvents } from "../../service/storageUtils";
 
-export const Events = (props) => {
+export const Events = () => {
+  const [eventsData, setEventsData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const files = await listAllFilesEvents();
+      console.log("arquivos: ++++++++++++++++++++++++++++++++++++ "+files)
+      setEventsData(files);
+    } catch (error) {
+      console.error('Erro ao listar os arquivos:', error);
+    }
+  };
+
   return (
     <ServicesContainer id="services">
       <div className="container">
-        <ServicesTitle>
-          <h2>Our Services</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
-          </p>
-        </ServicesTitle>
+        <SectionTitle>
+          <Title>Próximos eventos</Title>
+        </SectionTitle>
         <div className="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <ServiceItem key={`${d.name}-${i}`} className="col-md-4">
-                  <ServiceIcon className={d.icon} />
-                  <ServiceDesc>
-                    <h3>{d.name}</h3>
-                    <p>{d.text}</p>
-                  </ServiceDesc>
-                </ServiceItem>
-              ))
-            : "loading"}
+          {eventsData.length > 0 ? (
+            eventsData.map((fileName, index) => (
+              <ServiceItem key={index} className="col-md-4">
+                <img
+                  src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/events%2F${encodeURIComponent(fileName)}?alt=media`}
+                  alt="imagem do evento"
+                  width="200"
+                  height="200"
+                />
+              </ServiceItem>
+            ))
+          ) : (
+            <div>No events found.</div>
+          )}
         </div>
       </div>
     </ServicesContainer>

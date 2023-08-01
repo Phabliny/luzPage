@@ -1,9 +1,7 @@
-// Gallery.js
-
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { GalleryWrapper, Title, Description, GalleryContainer, GalleryItem } from "./styles"; // Import the styled components from "styles.js"
-import { listAllFiles } from "../../service/storageUtils";
+import { GalleryWrapper, Title, Description, SectionTitle, GalleryContainer, GalleryItem } from "./styles"; // Import the styled components from "styles.js"
+import { listAllFilesGallery } from "../../service/storageUtils";
 import estilo from './flip.module.css'; // Import the flip card styles
 
 const Flip = ({ fileName }) => {
@@ -17,7 +15,8 @@ const Flip = ({ fileName }) => {
           </div>
           <div className={estilo.flipCardBack}>
             <img src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/images%2F${encodeURIComponent(fileName)}?alt=media`} width="200" height="200" />
-            <div className={estilo.backside}>Descrição do {fileName}</div>
+            <div className={estilo.backside}>
+Artesanatos feitos à mão com excelência são criações únicas e especiais, nascidas da habilidade e dedicação.</div>
           </div>
         </div>
       </div>
@@ -34,7 +33,7 @@ export const Gallery = () => {
 
   const listFiles = async () => {
     try {
-      const files = await listAllFiles();
+      const files = await listAllFilesGallery();
       setFileList(files);
     } catch (error) {
       console.error('Erro ao listar os arquivos:', error);
@@ -55,10 +54,10 @@ export const Gallery = () => {
   return (
     <GalleryWrapper id="products">
       <div className="container">
-        <div className="section-title">
+        <SectionTitle >
           <Title>Galeria de Produtos</Title>
           <Description>Explore a elegância atemporal e a qualidade excepcional dos nossos artesanatos de couro.</Description>
-        </div>
+        </SectionTitle >
         <GalleryContainer>
           {/* Use the flipCardContainer class here to wrap the flip cards */}
           <div className={estilo.flipCardContainer}>

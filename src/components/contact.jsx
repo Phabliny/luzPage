@@ -11,6 +11,7 @@ import { AssignmentInd, Email, Phone } from "@mui/icons-material";
 import { Checkbox, Container, Divider, FormGroup, FormHelperText, Stack } from "@mui/material";
 import MaskedInput from "react-text-mask";
 
+
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [state, setState] = useState({
@@ -234,7 +235,19 @@ export const Contact = () => {
                       style={{ color: 'black' }}
                     />
                   }
-                  label="Aceito os termos e condições"
+                  label={
+                    <>
+                      Eu concordo com os{' '}
+                      <a href="/components/pages/termosDeUso" target="_blank">
+                        Termos de uso
+                      </a>{' '}
+                      e com as{' '}
+                      <a href="/components/pages/politicaDePrivacidade" target="_blank">
+                        Políticas de Privacidade
+                      </a>
+                      .
+                    </>
+                  }
                 />
                 <FormHelperText>{formErrors.terms}</FormHelperText>
               </FormControl>

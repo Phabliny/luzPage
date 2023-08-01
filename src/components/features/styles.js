@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
   text-align: center;
-  padding: 100px 0 25px 100px;
+  padding: 100px 0 100px 0px;
 
   @media (max-width: 768px) {
     min-height: auto;
@@ -10,9 +10,9 @@ export const FeaturesWrapper = styled.div`
 
   background: linear-gradient(
     -45deg,
-    rgba(219, 163, 125, 0.4) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(227, 187, 157, 0.4) 100%
+    rgba(219, 163, 125, 0.6) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(227, 187, 157, 0.6) 100%
   );
   background-size: 300% 300%;
   animation: gradientAnimation 7s ease infinite;

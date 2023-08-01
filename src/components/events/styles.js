@@ -6,8 +6,14 @@ export const ServicesContainer = styled.div`
   padding: 60px 0;
 `;
 
-export const ServicesTitle = styled.div`
-  margin-bottom: 30px;
+export const SectionTitle = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const Title = styled.h2`
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 `;
 
 export const ServiceItem = styled.div`

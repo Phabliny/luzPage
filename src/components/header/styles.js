@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: linear-gradient(70deg, #c47538, #c47538 60%, white 40%);
   position: relative;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Adicione esta linha para adicionar a sombra */
@@ -20,7 +20,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const LeftContent = styled.div`
-  width: 65vw;
+  width: 50vw;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -30,7 +30,8 @@ export const LeftContent = styled.div`
 `;
 
 export const RightContent = styled.div`
-  width: 35vw;
+  width: 50vw;
+  padding-left: 80px;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -51,7 +52,6 @@ export const Subtitulo = styled.h1`
   margin: 0;
   padding: 0;
   line-height: 0.1;
-  font-family: 'Autography', sans-serif;
   font-family: 'Trirong', sans-serif;
 `;
 

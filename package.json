@@ -2,6 +2,7 @@
   "name": "landingpage-react-template",
   "private": true,
   "dependencies": {
+    "@djpfs/react-vlibras": "^2.0.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.0",
@@ -20,6 +21,7 @@
     "react-icons": "^4.10.1",
     "react-interactive-blob": "^0.0.1",
     "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.14.2",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "react-text-mask": "^5.5.0",
