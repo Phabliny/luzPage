@@ -5,18 +5,22 @@ import { listAllFilesGallery } from "../../service/storageUtils";
 import estilo from './flip.module.css'; // Import the flip card styles
 
 const Flip = ({ fileName }) => {
+  // Extract the file name without the extension
+  const fileNameWithoutExtension = fileName.split('.')[0];
+
   return (
     <>
       <div className={estilo.flipCard}>
         <div className={estilo.flipCardInner}>
           <div className={estilo.flipCardFront}>
-            <img src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/images%2F${encodeURIComponent(fileName)}?alt=media`} width="200" height="200" alt={fileName} />
-            <div className={estilo.frontside}>{fileName}</div>
+            <img src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/images%2F${encodeURIComponent(fileName)}?alt=media`} width="200" height="200" alt={fileNameWithoutExtension} />
+            <div className={estilo.frontside}>{fileNameWithoutExtension}</div>
           </div>
           <div className={estilo.flipCardBack}>
             <img src={`https://firebasestorage.googleapis.com/v0/b/luzapp-858b0.appspot.com/o/images%2F${encodeURIComponent(fileName)}?alt=media`} width="200" height="200" />
             <div className={estilo.backside}>
-Artesanatos feitos à mão com excelência são criações únicas e especiais, nascidas da habilidade e dedicação.</div>
+              Artesanatos feitos à mão com excelência são criações únicas e especiais, nascidas da habilidade e dedicação.
+            </div>
           </div>
         </div>
       </div>
