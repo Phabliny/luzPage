@@ -1,0 +1,44 @@
+/* Large Screens (min-width: 1200px) */
+@media screen and (min-width: 1200px) {
+    .carousel_grande {
+      display: inline-block;
+    }
+
+    .carousel_medio {
+      display: none;
+    }
+
+    .carousel_pequeno {
+      display: none;
+    }
+  }
+
+  /* Medium Screens (min-width: 599px and max-width: 989px) */
+  @media screen and (min-width: 599px) and (max-width: 989px) {
+    .carousel_grande {
+      display: none;
+    }
+
+    .carousel_medio {
+      display: inline-block;
+    }
+
+    .carousel_pequeno {
+      display: none;
+    }
+  }
+
+  /* Small Screens (max-width: 598px) */
+  @media screen and (max-width: 598px) {
+    .carousel_grande {
+      display: none;
+    }
+
+    .carousel_medio {
+      display: none;
+    }
+
+    .carousel_pequeno {
+      display: inline-block;
+    }
+  }
